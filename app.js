@@ -16,7 +16,7 @@ function sum(a, b) { //eslint-disable-line
 }
 
 // Here is the test for sum(); uncomment it to run it
-//testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -30,15 +30,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-  var mult = a * b;
-  var message = 'The product of ' + a + ' and ' + b + ' is ' + mult + '.';
+  var product = a * b;
+  var message = 'The product of ' + a + ' and ' + b + ' is ' + product + '.';
 
-  return [mult, message];
+  return [product, message];
 
 }
 
 // Here is the test for multiply(); uncomment it to run it
-//testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -57,15 +57,20 @@ Test this function by hand in the console to get it working, and when you think 
 
 function sumAndMultiply(a, b, c) { //eslint-disable-line
 
-  var d = 0;
-  var added = sum(a, b);
-  var zoey = added + sum(c, d);
-  parseInt(zoey);
+  var theSum = sum(a, sum(b,c)[0])[0];
 
-  var messageSum = '4 and 7 and 5 sum to 16.';
-  var messageMult = 'The product of 4 and 7 and 5 is 140.';
+  // var firstSum = sum(a, b)[0];
+  // var secondSum = sum(firstSum, c)[0];
 
-  return [zoey, messageSum, messageMult];
+  var product = multiply(a, multiply(b,c)[0])[0];
+
+  // var firstPro = mult(a,b)[0];
+  // var secondPro = sum(firstPro, c)[0];
+
+  var message1 = `${a} and ${b} and ${c} sum to ${theSum}.`;
+  var message2 = `The product of ${a} and ${b} and ${c} is ${product}.`;
+
+  return [theSum, product, message1, message2];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -85,13 +90,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 var testArray = [2, 3, 4]; //eslint-disable-line
-
 function sumArray(sumArr) { //eslint-disable-line
 
 }
 
 // Here is the test for sumArray(); uncomment it to run it
-
 // testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
@@ -108,7 +111,7 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+  
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
@@ -136,10 +139,10 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+  
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
